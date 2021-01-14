@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin    : 0;
+  padding   : 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  /* Colors */
+  --blue-dark : #100E1D;
+  --blue-light: #1E213A;
+  --grey-light: #E7E7EB;
+  --grey-mid  : #A09FB1;
+  --grey-dark : #88869D;
+
+}
+
+.App {
+  display         : grid;
+  place-items     : center;
+  height          : 100vh;
+  background-color: var(--blue-dark);
+}
+
+.logIn {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  width          : 600px;
+  height         : 350px;
+  border         : 5px solid var(--blue-light);
+  border-radius  : 7px;
+}
+
+.logIn-inputs input {
+  margin          : 10px;
+  width           : 200px;
+  height          : 40px;
+  padding-left    : 10px;
+  border          : 3px solid var(--blue-light);
+  background-color: transparent;
+  color           : var(--grey-light);
+  font-size       : 1.6rem;
+}
+
+.logIn-inputs input:focus {
+  outline: none;
+}
+
+.logIn button {
+  width           : 200px;
+  height          : 50px;
+  border          : none;
+  border-radius   : 7px;
+  background-color: var(--blue-light);
+  color           : var(--grey-light);
+  font-size       : 1.6rem;
+}
+
+.logIn button:hover {
+  cursor          : pointer;
+  background-color: var(--grey-dark);
+}
