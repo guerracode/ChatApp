@@ -5,7 +5,8 @@ import Login from './components/Login.jsx';
 import Chat from './components/Chat.jsx';
 
 let socket;
-const CONNECTION_PORT = 'localhost:3001';
+const CONNECTION_PORT =
+  process.env.REACT_APP_CONNECTION_PORT || 'localhost:3001';
 
 function App() {
   // Before Login
