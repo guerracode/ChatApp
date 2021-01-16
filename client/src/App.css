@@ -5,7 +5,8 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size  : 62.5%;
+  font-family: 'Raleway', sans-serif;
 }
 
 :root {
@@ -30,21 +31,32 @@ html {
   flex-direction : column;
   justify-content: center;
   align-items    : center;
-  width          : 600px;
+  width          : 80vw;
+  max-width      : 600px;
   height         : 350px;
   border         : 5px solid var(--blue-light);
-  border-radius  : 7px;
+  border-radius  : 20px;
+}
+
+.logIn-inputs {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  width          : 70%;
+  margin-bottom  : 20px;
 }
 
 .logIn-inputs input {
   margin          : 10px;
-  width           : 200px;
-  height          : 40px;
+  width           : 80%;
+  height          : 50px;
   padding-left    : 10px;
   border          : 3px solid var(--blue-light);
   background-color: transparent;
   color           : var(--grey-light);
   font-size       : 1.6rem;
+  border-radius   : 10px;
 }
 
 .logIn-inputs input:focus {
@@ -71,10 +83,11 @@ html {
 .chatContainer {
   display       : flex;
   flex-direction: column;
-  width         : 600px;
-  height        : 350px;
+  width         : 60vw;
+  min-width     : 310px;
+  height        : 80vh;
   border        : 5px solid var(--blue-light);
-  border-radius : 10px;
+  border-radius : 20px;
 }
 
 .chatContainer .messages {
@@ -82,66 +95,99 @@ html {
   flex-direction: column;
   flex          : 80%;
   width         : 100%;
+  padding       : 20px;
   color         : white;
+  overflow      : hidden;
+  overflow-y    : auto;
+  border-radius : 20px;
 }
 
 .chatContainer .messageInputs {
-  display   : flex;
-  flex      : 20%;
-  width     : 100%;
-  border-top: 5px solid var(--blue-light);
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  height          : 80px;
+  padding         : 0 10px;
+  width           : 100%;
+  background-color: var(--blue-light);
 }
 
 .chatContainer .messageInputs input {
-  flex        : 80%;
-  border      : none;
-  height      : calc(100% - 5px);
-  padding-left: 20px;
-  font-size   : 20px;
+  flex            : 80%;
+  border          : none;
+  height          : 50px;
+  padding-left    : 20px;
+  font-size       : 20px;
+  border-radius   : 30px;
+  background-color: var(--grey-light);
+  outline         : none;
 }
 
 .chatContainer .messageInputs button {
-  flex            : 20%;
-  border          : none;
-  height          : calc(100% - 5px);
-  font-size       : 1.8rem;
-  background-color: var(--blue-light);
+  flex            : 10%;
+  height          : 50px;
+  margin-left     : 10px;
+  font-size       : 1.4rem;
+  background-color: var(--blue-dark);
   color           : var(--grey-light);
+  border-radius   : 50px;
+  border          : none;
 }
 
 .messageIndividual {
-  display         : inline-block;
-  width       : calc(100% - 60%);
-  min-height      : 50px;
+  display         : flex;
+  flex-direction  : column;
+  align-content   : center;
+  justify-content : center;
+  align-self      : flex-start;
+  min-width       : 100px;
+  max-width       : 85%;
+  height          : auto;
   padding         : 10px;
+  margin-bottom   : 15px;
   border-radius   : 10px;
-  margin          : 20px;
   background-color: var(--blue-light);
 }
 
 .messageIndividual.You {
-  align-self: flex-end;
-  text-align: right;
+  align-self      : flex-end;
+  background-color: rgb(1, 56, 68);
 }
 
 .messageIndividual h3 {
   margin-bottom: 5px;
   font-size    : 1.2rem;
-  font-weight  : bold;
+  font-weight  : 600;
   color        : green;
   overflow-wrap: break-word;
 }
 
 .messageIndividual.You h3 {
   text-align: right;
-}
-
-.messageIndividual .You h3 {
-  text-align: right;
+  color     : green;
 }
 
 .messageIndividual p {
-  font-size    : 1.2rem;
+  font-size    : 1.6rem;
   color        : var(--grey-light);
+  font-weight  : 500;
   overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 767px) {
+  .logIn {
+    width: 90vw;
+  }
+
+  .chatContainer {
+    width: 100vw;
+  }
+
+  .logIn-inputs {
+    width: 85%;
+  }
+
+  .logIn-inputs input {
+    width: 100%;
+  }
 }

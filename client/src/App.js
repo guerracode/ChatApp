@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import './App.css';
+import Login from './components/Login.jsx';
+import Chat from './components/Chat.jsx';
 
 let socket;
 const CONNECTION_PORT = 'localhost:3001';
@@ -46,52 +48,11 @@ function App() {
   return (
     <div className='App'>
       {!loggedIn ? (
-        <div className='logIn'>
-          <div className='logIn-inputs'>
-            <input
-              type='text'
-              placeholder='Name'
-              onChange={(e) => {
-                setUserName(e.target.value);
-              }}
-            />
-            <input
-              type='text'
-              placeholder='Room'
-              onChange={(e) => {
-                setRoom(e.target.value);
-              }}
-            />
-          </div>
-          <button type='button' onClick={connectToRoom}>
-            Enter Chat
-          </button>
-        </div>
+        <Login data={{ setUserName, setRoom, connectToRoom }} />
       ) : (
-        <div className='chatContainer'>
-          <div className='messages'>
-            {messageList.map((val) => (
-              <div
-                className={`messageIndividual ${
-                  val.author === userName ? 'You' : 'Other'
-                }`}
-              >
-                <h3>{val.author === userName ? 'You' : val.author}</h3>
-                <p>{val.message}</p>
-              </div>
-            ))}
-          </div>
-          <div className='messageInputs'>
-            <input
-              type='text'
-              placeholder='Message...'
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-            />
-            <button onClick={sendMessage}>Send</button>
-          </div>
-        </div>
+        <Chat
+          data={{ messageList, userName, message, setMessage, sendMessage }}
+        />
       )}
     </div>
   );
