@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "Jose Luis Chavez <josephsiul15@gmai.com>",
@@ -13,5 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "socket.io": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

@@ -11,7 +11,7 @@ html {
 :root {
   /* Colors */
   --blue-dark : #100E1D;
-  --blue-light: #1E213A;
+  --blue-light: #343856;
   --grey-light: #E7E7EB;
   --grey-mid  : #A09FB1;
   --grey-dark : #88869D;
@@ -64,4 +64,84 @@ html {
 .logIn button:hover {
   cursor          : pointer;
   background-color: var(--grey-dark);
+}
+
+/* Chat */
+
+.chatContainer {
+  display       : flex;
+  flex-direction: column;
+  width         : 600px;
+  height        : 350px;
+  border        : 5px solid var(--blue-light);
+  border-radius : 10px;
+}
+
+.chatContainer .messages {
+  display       : flex;
+  flex-direction: column;
+  flex          : 80%;
+  width         : 100%;
+  color         : white;
+}
+
+.chatContainer .messageInputs {
+  display   : flex;
+  flex      : 20%;
+  width     : 100%;
+  border-top: 5px solid var(--blue-light);
+}
+
+.chatContainer .messageInputs input {
+  flex        : 80%;
+  border      : none;
+  height      : calc(100% - 5px);
+  padding-left: 20px;
+  font-size   : 20px;
+}
+
+.chatContainer .messageInputs button {
+  flex            : 20%;
+  border          : none;
+  height          : calc(100% - 5px);
+  font-size       : 1.8rem;
+  background-color: var(--blue-light);
+  color           : var(--grey-light);
+}
+
+.messageIndividual {
+  display         : inline-block;
+  width       : calc(100% - 60%);
+  min-height      : 50px;
+  padding         : 10px;
+  border-radius   : 10px;
+  margin          : 20px;
+  background-color: var(--blue-light);
+}
+
+.messageIndividual.You {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.messageIndividual h3 {
+  margin-bottom: 5px;
+  font-size    : 1.2rem;
+  font-weight  : bold;
+  color        : green;
+  overflow-wrap: break-word;
+}
+
+.messageIndividual.You h3 {
+  text-align: right;
+}
+
+.messageIndividual .You h3 {
+  text-align: right;
+}
+
+.messageIndividual p {
+  font-size    : 1.2rem;
+  color        : var(--grey-light);
+  overflow-wrap: break-word;
 }
